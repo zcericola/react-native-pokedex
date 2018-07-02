@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+//activityIndicator is a built in loading animation for react-native
+import { View, Text, StyleSheet, Image, ActivityIndicator } from 'react-native';
 import axios from 'axios';
 
 class Details extends Component {
@@ -14,7 +15,6 @@ class Details extends Component {
   componentDidMount() {
     const { url } = this.props.navigation.state.params;
     axios.post('http://localhost:3002/details/', { url }).then(res => {
-      console.log(res.data.sprites);
       this.setState({
         pokeDetails: res.data,
         img: res.data.sprites.front_default
@@ -27,23 +27,29 @@ class Details extends Component {
     const { pokeDetails, img } = this.state;
     return (
       <View style={styles.container}>
-        <Text style = {styles.text}>Name: {pokeDetails.name}</Text>
-        <Text style = {styles.text}>Order: {pokeDetails.order}</Text>
-        <Text style = {styles.text}>Height: {pokeDetails.height}</Text>
-        <Text style = {styles.text}>Weight: {pokeDetails.weight}</Text>
-        <Text style = {styles.text}>Base Experience: {pokeDetails.base_experience}</Text>
-        <Image
-        style = {{'height': 350, 'width': 350, 'marginTop': 20}}
-          source={{
-            uri: `${
-              img
-                ? img: 'https://orig00.deviantart.net/34b4/f/2013/243/9/b/pokeball_by_sosyn12-d6kgwvf.png'
-            }`
-          }}
-        >
-        </Image>
-
-      
+        <View style={{ alignItems: 'center' }}>
+          <Text style={styles.h1}>{pokeDetails.name}</Text>
+        </View>
+        <Text style={styles.text}>Order: {pokeDetails.order}</Text>
+        <Text style={styles.text}>Height: {pokeDetails.height}</Text>
+        <Text style={styles.text}>Weight: {pokeDetails.weight}</Text>
+        <Text style={styles.text}>
+          Base Experience: {pokeDetails.base_experience}
+        </Text>
+        {img !== undefined && img.length > 0 ? (
+          <Image
+            style={{ height: 350, width: 350, marginTop: 20 }}
+            source={{
+              uri: `${img}`
+            }}
+          />
+        ) : (
+          <ActivityIndicator
+            size="large"
+            color="#2a75bb"
+            style={{ marginTop: 30 }}
+          />
+        )}
       </View>
     );
   }
@@ -52,12 +58,20 @@ class Details extends Component {
 const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
-    alignItems: 'center',
+    padding: 20,
+
     flex: 1
   },
+
+  h1: {
+    fontSize: 36,
+    color: '#2a75bb',
+    padding: 10,
+    alignItems: 'center'
+  },
   text: {
-      fontSize: 30,
-      textAlign: 'left'
+    fontSize: 30,
+    textAlign: 'left'
   }
 });
 

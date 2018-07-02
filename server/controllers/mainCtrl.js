@@ -15,7 +15,6 @@ module.exports = {
     axios
       .get(`${req.body.url}`)
       .then(result => {
-        // console.log('results of poke', result.data.sprites.front_default);
         res.status(200).json(result.data);
       })
       .catch(err => console.log(err));

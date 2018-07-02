@@ -1,7 +1,7 @@
 //lists all the pokemon from the API
 
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { StyleSheet, View, ScrollView } from 'react-native';
 import { List, ListItem } from 'react-native-elements';
 import Header from '../Header/Header';
 import axios from 'axios';

@@ -26,7 +26,6 @@ const styles = StyleSheet.create({
     color: '#ffcb05',
     fontSize: 20,
     fontWeight: 'bold',
-    paddingTop: 10,
     textShadowColor: '#c7a008',
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 1
