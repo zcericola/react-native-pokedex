@@ -10,8 +10,7 @@ const Settings = () => {
   return (
     <Card title="Settings">
       <Text style={{ marginBottom: 10 }}>
-        Please feel free to experiment with the settings below. Heck, go poke'
-        crazy!
+        Please feel free to experiment with the settings below.
       </Text>
       {listSettings}
       <Button
