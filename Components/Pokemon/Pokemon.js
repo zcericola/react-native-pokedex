@@ -13,10 +13,10 @@ class Pokemon extends Component {
       pokemon: []
     };
   }
-  componentDidMount() {
-    axios.get('http://localhost:3002/pokemon').then(res => {
-      this.setState({ pokemon: res.data });
-    });
+  async componentDidMount() {
+    let response = await axios.get('http://localhost:3002/pokemon');
+    this.setState({pokemon: response.data});
+    
   }
 
 //Routing here

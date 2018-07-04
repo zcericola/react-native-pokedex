@@ -12,14 +12,11 @@ class Details extends Component {
     };
   }
 
-  componentDidMount() {
+ async componentDidMount() {
     const { url } = this.props.navigation.state.params;
-    axios.post('http://localhost:3002/details/', { url }).then(res => {
-      this.setState({
-        pokeDetails: res.data,
-        img: res.data.sprites.front_default
-      });
-    });
+   let response = await axios.post('http://localhost:3002/details/', { url });
+   this.setState({pokeDetails: response.data, img: response.data.sprites.front_default});
+   
   }
 
   render() {

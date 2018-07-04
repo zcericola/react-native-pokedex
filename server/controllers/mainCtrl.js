@@ -1,23 +1,25 @@
 const axios = require('axios');
 
 module.exports = {
-  getResults: (req, res, next) => {
-    axios
-      .get('http://pokeapi.co/api/v2/pokemon/')
-      .then(result => {
+   getResults: async (req, res, next) => {
+    try {
+      let result = await axios
+        .get('http://pokeapi.co/api/v2/pokemon/');
         res.status(200).json(result.data.results);
-      })
-
-      .catch(err => console.log(err));
+      } catch(err) {
+        console.log(err);
+      }   
   },
 
-  getDetails: (req, res, next) => {
-    axios
-      .get(`${req.body.url}`)
-      .then(result => {
-        console.log(result.data);
-        res.status(200).json(result.data);
-      })
-      .catch(err => console.log(err));
+  getDetails: async (req, res, next) => {
+   try{
+    let result = await axios
+    .get(`${req.body.url}`);
+    res.status(200).json(result.data);
+  } catch(err){
+    console.log(err);
+
+  } 
+
   }
 };
