@@ -14,10 +14,14 @@ class Details extends Component {
 
  async componentDidMount() {
     const { url } = this.props.navigation.state.params;
+    try{
    let response = await axios.post('http://localhost:3002/details/', { url });
    this.setState({pokeDetails: response.data, img: response.data.sprites.front_default});
-   
-  }
+  }catch(err){
+    console.log(err);
+      }
+   }
+  
 
   render() {
     const { name, url } = this.props.navigation.state.params;
