@@ -10,10 +10,11 @@ In this application, the user can browse from a list of a pokemon pulled from th
 5. How to use React-Navigation, a React Native routing solution
 6. Using the react-native-elements package to create a nicely designed layout and what to be aware of vs. developing for a normal website
 
-## To Run
+## To Run Project Locally
+
 ### Install Dependecies: `npm i`
 
-## Running the server: `node server/` OR `nodemon server/`
+### Running the server: `node server/` or `nodemon server/`
 
 ### If you have an emulator installed on your computer:
 ### Mac: `npm run ios`
@@ -28,7 +29,7 @@ In this application, the user can browse from a list of a pokemon pulled from th
 
 ## Screenshots
 
-![[Landing View](https://i.imgur.com/sUcmmU3.png)
+![Landing View](https://i.imgur.com/sUcmmU3.png)
 
 ![Detailed Pokemon View](https://i.imgur.com/dnqYUkb.png)
 
