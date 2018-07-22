@@ -28,13 +28,15 @@ In this application, the user can browse from a list of a pokemon pulled from th
 
 ## Screenshots
 
-![Landing View](https://imgur.com/sUcmmU3)
+![[Landing View](https://i.imgur.com/sUcmmU3.png)
 
-![Detailed Pokemon View](https://imgur.com/dnqYUkb)
+![Detailed Pokemon View](https://i.imgur.com/dnqYUkb.png)
 
-![Contact View](https://imgur.com/hbqvgIC)
+![Detailed Pokemon View 2](https://i.imgur.com/gdBUKqW.png)
 
-![Settings View](https://imgur.com/y0Y6e0J)
+![Settings](https://i.imgur.com/hbqvgIC.png)
+
+![Contact](https://i.imgur.com/y0Y6e0J.png)
 
 
 
